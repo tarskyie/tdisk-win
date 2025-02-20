@@ -9,7 +9,8 @@ run PowerShell as an administrator.
 ``` powershell
 $tdExeLink = curl https://raw.githubusercontent.com/tarskyie/tdisk-win/refs/heads/master/tdisk-win/Utilities/current_ver.txt
 curl -OL $tdExeLink
-Move-Item tdisk.exe ($env:ProgramFiles+"\tdisk")
+mkdir ($env:ProgramFiles+"\tdisk")
+Move-Item tdisk.exe ($env:ProgramFiles+"\tdisk") -force
 $currentPath = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
 [System.Environment]::SetEnvironmentVariable("Path", "$currentPath;($env:ProgramFiles+'\tdisk')", [System.EnvironmentVariableTarget]::Machine)
 ```
