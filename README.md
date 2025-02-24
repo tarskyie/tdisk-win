@@ -5,7 +5,11 @@
 * unzip the archive
 * run install-tdisk.ps1 as an administrator
 ### 2. Install with PowerShell ###
-run PowerShell as an administrator.
+ * make sure that .NET 9 Runtime is installed
+``` powershell
+winget install Microsoft.DotNet.Runtime.9
+```
+ * run PowerShell as an administrator
 ``` powershell
 $tdExeLink = curl https://raw.githubusercontent.com/tarskyie/tdisk-win/refs/heads/master/tdisk-win/Utilities/current_ver.txt
 curl -OL $tdExeLink
