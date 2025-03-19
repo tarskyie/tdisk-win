@@ -16,6 +16,6 @@ curl -OL $tdExeLink
 mkdir ($env:ProgramFiles+"\tdisk")
 Move-Item tdisk.exe ($env:ProgramFiles+"\tdisk") -force
 $currentPath = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
-[System.Environment]::SetEnvironmentVariable("Path", "$currentPath;($env:ProgramFiles+'\tdisk')", [System.EnvironmentVariableTarget]::Machine)
+[System.Environment]::SetEnvironmentVariable("Path", "$currentPath;$env:ProgramFiles\tdisk", [System.EnvironmentVariableTarget]::Machine)
 ```
 ### 3. Install manually with the executable file provided in Releases.
